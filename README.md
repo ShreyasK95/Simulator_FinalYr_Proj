@@ -28,7 +28,7 @@ Clone the repository with Git LFS so large tracked assets are downloaded:
 
 ```bash
 git lfs install
-git clone <repository-url>
+git clone https://github.com/ShreyasK95/Simulator_FinalYr_Proj.git
 cd <repository-folder>
 git lfs pull
 ```
