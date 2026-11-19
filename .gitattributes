@@ -1,0 +1,8 @@
+*.blend filter=lfs diff=lfs merge=lfs -text
+*.glb filter=lfs diff=lfs merge=lfs -text
+
+# Preserve CPython's vendored attribute groups while keeping their definitions
+# at the repository root, where Git allows attribute macros.
+[attr]noeol -text
+[attr]dos text eol=crlf
+[attr]generated linguist-generated=true diff=generated

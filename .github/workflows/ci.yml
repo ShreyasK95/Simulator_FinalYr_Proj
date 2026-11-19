@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-24.04
+
+    steps:
+    - name: Checkout Simulator
+      uses: actions/checkout@v2
+      with:
+        path: simulator
+        submodules: recursive
+    - name: Install Simulator system dependencies
+      run: sudo apt-get update && sudo apt-get install -y wget git cmake build-essential swig zlib1g-dev doxygen default-jre pkg-config
+    - name: Install Simulator dependencies
+      run: yarn run build-deps
+      working-directory: simulator
+    - name: Install Simulator modules
+      # Specifying an alternative cache folder to work around a race condition issue in yarn,
+      # which seems to occur b/c of how ivygate is referenced from GitHub.
+      # See https://github.com/yarnpkg/yarn/issues/7212
+      run: yarn install --cache-folder ./.yarncache
+      working-directory: simulator
+    - name: Build i18n
+      run: yarn run build-i18n
+      working-directory: simulator
+    - name: Build production bundle
+      run: NODE_OPTIONS=--openssl-legacy-provider yarn build
+      working-directory: simulator
+    - name: Run linter
+      run: yarn lint
+      working-directory: simulator
+    - name: Run unit tests
+      run: yarn test
+      working-directory: simulator

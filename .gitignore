@@ -1,0 +1,96 @@
+# JS
+node_modules
+yarn-error.log
+dist
+.yarncache
+
+# Local secrets and credentials. Keep templates ending in .example if needed.
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+**/*firebase-adminsdk*.json
+**/*service-account*.json
+**/*service_account*.json
+**/*serviceAccount*.json
+**/client_secret*.json
+**/oauth_client_secret*.json
+**/*.p12
+**/*.pfx
+
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+# Redis files
+dump.rdb
+
+
+
+
+.dependencygraph/setting.json
+.vscode/settings.json
+
+# Generated dependency build output
+dependencies/libkipr_build_c/
+dependencies/libkipr_build_python/
+dependencies/libkipr_install_c/
+dependencies/cpython/builddir/
+dependencies/emsdk/node/
+dependencies/emsdk/upstream/
+dependencies/emsdk/zips/
+dependencies/emsdk/.emscripten
+dependencies/emsdk/.emscripten.old
+dependencies/kipr-scratch/libwallaby-build/
+dependencies/kipr-scratch/kipr-scratch/
