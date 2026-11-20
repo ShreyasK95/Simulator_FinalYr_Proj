@@ -17,7 +17,7 @@ const engine = new Styletron({ prefix: 'style' });
 
 const initializeGapiClient = async () => {
   await gapi.client.init({
-    apiKey: 'AIzaSyCuSBzNumuFyeOzAhnSEslWIgdgVqKR7z0',
+    apiKey: '',
     scope: 'https://www.googleapis.com/auth/classroom.coursework.me',
     discoveryDocs: ['https://classroom.googleapis.com/$discovery/rest?version=v1'],
     clientId: '705985154569-oeqkm4u0hdhjsa1s3qi05l39eci594sp.apps.googleusercontent.com',
